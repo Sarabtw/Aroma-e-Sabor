@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Aroma-e-Sabor.props" />
+</Project>
