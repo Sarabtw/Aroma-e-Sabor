@@ -7,6 +7,7 @@
     <title>Início</title>
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/sidebar.js" defer></script>
+    <script src="js/cart.js" defer></script>
 </head>
 
 <body class="home-page">
@@ -32,12 +33,15 @@
         <div class="user-info">
             <span>Bem-vindo <strong>Alfredo Torres</strong></span>
             <img src="avatar.jpg" alt="Usuário" class="avatar" />
+            <a href="carrinho.html" id="cart-navbar-btn"
+                style="margin-left:18px;font-size:1.5rem;text-decoration:none;position:relative;">
+                🛒<span id="cart-count-navbar"
+                    style="position:absolute;top:-8px;right:-12px;background:#a8002c;color:#fff;font-size:0.85rem;padding:1px 6px;border-radius:10px;min-width:18px;text-align:center;">0</span>
+            </a>
         </div>
     </header>
 
-    <div class="balance-box">
-        <p>Adicionar cartão: <strong>R$ 0,00</strong></p>
-    </div>
+  
 
     <!-- Card de agendamento de retirada -->
     <div class="pickup-banner">
@@ -63,34 +67,40 @@
 
     <section class="product-list">
         <div class="product">
-            <img src="coxinha.png" />
+            <img src="img/coxinha.png" />
             <div class="details">
                 <h4>Coxinha</h4>
                 <p>Coxinha de frango</p>
                 <span>R$ 6,00</span>
             </div>
+            <button class="add-cart-btn" data-name="Coxinha" data-price="6.00" title="Adicionar ao carrinho">🛒</button>
         </div>
         <div class="product">
-            <img src="enroladinho.png" />
+            <img src="img/salsicha.png" />
             <div class="details">
                 <h4>Enroladinho</h4>
                 <p>Salsicha/queijo</p>
                 <span>R$ 6,00</span>
             </div>
+            <button class="add-cart-btn" data-name="Enroladinho" data-price="6.00"
+                title="Adicionar ao carrinho">🛒</button>
         </div>
         <div class="product">
-            <img src="coca.png" />
+            <img src="img/coca.png" />
             <div class="details">
                 <h4>Lata Coca-Cola</h4>
                 <p>220ml/350ml</p>
                 <span>R$ 6,00</span>
             </div>
+            <button class="add-cart-btn" data-name="Lata Coca-Cola" data-price="6.00"
+                title="Adicionar ao carrinho">🛒</button>
         </div>
     </section>
 
     <footer class="footer-nav">
         <a class="active">🏠 INÍCIO</a>
         <a>💳 Pagamentos</a>
+        <a id="cart-footer-btn">🛒 Carrinho <span id="cart-count" style="font-weight:bold;">0</span></a>
         <a>☰ Mais</a>
     </footer>
 

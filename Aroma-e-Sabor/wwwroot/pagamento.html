@@ -10,8 +10,27 @@
 
 <body class="pagamento-page">
 
-    <header class="header">
-        <h2>Pagamentos</h2>
+
+    <!-- Sidebar lateral -->
+    <nav id="sidebar-menu" class="sidebar-menu">
+        <div class="sidebar-logo">
+            <h1>Aroma <span class="e">e</span> <span class="sabor">Sabor</span></h1>
+        </div>
+        <div class="sidebar-nav">
+            <a href="home.html">🏠 Início</a>
+            <a href="#">🍔 Lanches</a>
+            <a href="#">🥤 Bebidas</a>
+            <a href="#">⭐ Favoritos</a>
+            <a href="#">💳 Pagamentos</a>
+            <a href="#">⚙️ Configurações</a>
+            <a href="#">🚪 Sair</a>
+        </div>
+    </nav>
+
+    <header class="header"
+        style="background-color:#850000;color:white;display:flex;align-items:center;justify-content:space-between;padding:15px 20px;font-size:18px;border-bottom:2px solid #a00000;position:relative;z-index:101;">
+        <div class="menu-icon" id="menu-icon" style="font-size:2rem;cursor:pointer;">☰</div>
+        <h2 style="margin:0 0 0 12px;">Pagamentos</h2>
         <img src="avatar.jpg" class="avatar" />
     </header>
 
@@ -20,10 +39,13 @@
         <h3>R$ 0,00</h3>
     </section>
 
+
     <section class="formas-pagamento">
         <h4>Formas de pagamento</h4>
-        <button class="btn-secondary">Cadastrar novo cartão</button>
-        <button class="btn-secondary">Ver todas formas de pagamento</button>
+       
+        <button class="btn-secondary" id="ver-formas-btn">Ver todas formas de pagamento</button>
+        <div id="formas-cards" style="display:none;gap:12px;margin-top:16px;flex-wrap:wrap;justify-content:center;"
+            class="formas-cards"></div>
     </section>
 
     <section class="historico-transacao">
@@ -44,6 +66,41 @@
         </ul>
     </section>
 
+
+    <script src="js/sidebar.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var btn = document.getElementById('ver-formas-btn');
+            var cards = document.getElementById('formas-cards');
+            if (btn && cards) {
+                btn.addEventListener('click', function () {
+                    if (cards.style.display === 'none' || cards.style.display === '') {
+                        cards.innerHTML = `
+                        <div style="background:#fff;border-radius:12px;box-shadow:0 1px 6px #0001;padding:18px 22px;display:inline-block;text-align:center;min-width:90px;margin:4px;">
+                            <div style='font-size:2rem;'>💸</div>
+                            <div style='font-size:1rem;margin-top:4px;'>Dinheiro</div>
+                        </div>
+                        <div style="background:#fff;border-radius:12px;box-shadow:0 1px 6px #0001;padding:18px 22px;display:inline-block;text-align:center;min-width:90px;margin:4px;">
+                            <div style='font-size:2rem;'>🏦</div>
+                            <div style='font-size:1rem;margin-top:4px;'>PIX</div>
+                        </div>
+                        <div style="background:#fff;border-radius:12px;box-shadow:0 1px 6px #0001;padding:18px 22px;display:inline-block;text-align:center;min-width:90px;margin:4px;">
+                            <div style='font-size:2rem;'>💳</div>
+                            <div style='font-size:1rem;margin-top:4px;'>Crédito</div>
+                        </div>
+                        <div style="background:#fff;border-radius:12px;box-shadow:0 1px 6px #0001;padding:18px 22px;display:inline-block;text-align:center;min-width:90px;margin:4px;">
+                            <div style='font-size:2rem;'>🏧</div>
+                            <div style='font-size:1rem;margin-top:4px;'>Débito</div>
+                        </div>
+                    `;
+                        cards.style.display = 'flex';
+                    } else {
+                        cards.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>

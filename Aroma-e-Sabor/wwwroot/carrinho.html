@@ -8,67 +8,112 @@
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
+
 <body class="carrinho-page">
 
-    <header class="header">
-        <a href="home.html" class="back-btn">←</a>
-        <h2>Carrinho</h2>
+    <!-- Sidebar lateral -->
+    <nav id="sidebar-menu" class="sidebar-menu">
+        <div class="sidebar-logo">
+            <h1>Aroma <span class="e">e</span> <span class="sabor">Sabor</span></h1>
+        </div>
+        <div class="sidebar-nav">
+            <a href="home.html">🏠 Início</a>
+            <a href="#">🍔 Lanches</a>
+            <a href="#">🥤 Bebidas</a>
+            <a href="#">⭐ Favoritos</a>
+            <a href="#">💳 Pagamentos</a>
+            <a href="#">⚙️ Configurações</a>
+            <a href="#">🚪 Sair</a>
+        </div>
+    </nav>
+
+    <header class="header top-bar" style="position:relative;z-index:101;">
+        <div class="menu-icon" id="menu-icon" style="font-size:2rem;cursor:pointer;">☰</div>
+        
+        <h2 style="margin-left:12px;">Carrinho</h2>
     </header>
 
     <section class="cart-items">
-        <div class="cart-item">
-            <img src="coxinha.png" />
-            <div class="info">
-                <p>Coxinha F</p>
-                <span>R$ 6.00</span>
-            </div>
-            <div class="qty">
-                <button>+</button>
-                <span>1</span>
-                <button>-</button>
-            </div>
-        </div>
+        <!-- Itens do carrinho serão renderizados aqui pelo JS -->
+    </section>
 
-        <div class="cart-item">
-            <img src="guarana.png" />
-            <div class="info">
-                <p>Lata Guaraná</p>
-                <span>R$ 4.00</span>
-            </div>
-            <div class="qty">
-                <button>+</button>
-                <span>1</span>
-                <button>-</button>
-            </div>
-        </div>
+    <section class="pickup-time-box"
+        style="max-width:500px;margin:0 auto 24px auto;padding:18px 18px 10px 18px;background:#fff;border-radius:18px;box-shadow:0 1px 5px rgba(0,0,0,0.04);">
+        <h3 style="margin-bottom:10px;color:#a8002c;font-size:1.1rem;">Escolha o horário de retirada:</h3>
+        <form id="pickup-time-form">
+            <select id="pickup-time-select"
+                style="width:100%;padding:10px;border-radius:8px;border:1px solid #ccc;font-size:1rem;">
+                <option value="09:00">09:00</option>
+                <option value="09:15">09:15</option>
+                <option value="09:30">09:30</option>
+                <option value="09:45">09:45</option>
+                <option value="15:00">15:00</option>
+                <option value="15:15">15:15</option>
+                <option value="15:30">15:30</option>
+                <option value="15:45">15:45</option>
+            </select>
+        </form>
+    </section>
 
-        <div class="cart-item">
-            <img src="mentos.png" />
-            <div class="info">
-                <p>Bala Mentos</p>
-                <span>R$ 3.00</span>
-            </div>
-            <div class="qty">
-                <button>+</button>
-                <span>1</span>
-                <button>-</button>
-            </div>
+
+    <section class="resumo-pagamento" id="resumo-pagamento"
+        style="position:fixed;left:0;right:0;bottom:0;z-index:100;background:#fff;border-top:1px solid #eee;box-shadow:0 -2px 12px rgba(0,0,0,0.07);padding:18px 0 12px 0;max-width:100vw;">
+        <div style="max-width:500px;margin:0 auto;display:flex;flex-direction:column;gap:4px;">
+            <p style="margin:0;">SubTotal: <strong id="subtotal">R$ 0,00</strong></p>
+            <p style="margin:0;">Retirada às: <strong id="pickup-time">--:--</strong></p>
+            <p style="margin:0 0 8px 0;">Total: <strong id="total">R$ 0,00</strong></p>
+            <button class="btn-primary" id="finalizar-btn"
+                style="width:100%;font-size:1.1rem;padding:12px 0;">Finalizar</button>
         </div>
     </section>
 
-    <section class="resumo-pagamento">
-        <p>SubTotal: <strong>R$ 13.00</strong></p>
-        <p>Retirada às: <strong>15:00</strong></p>
-        <p>Total: <strong>R$ 13.00</strong></p>
-        <button class="btn-primary">Finalizar</button>
-    </section>
 
-    <footer class="footer-nav">
-        <a href="home.html">🏠 INÍCIO</a>
-        <a class="active">💳 Pagamentos</a>
-        <a>☰ Mais</a>
-    </footer>
 
+    <script src="js/sidebar.js"></script>
+    <script src="js/carrinho.js"></script>
+    <script>
+        // Redireciona para pagamento.html ao clicar em Finalizar
+        document.addEventListener('DOMContentLoaded', function () {
+            var btn = document.getElementById('finalizar-btn');
+            if (btn) {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    window.location.href = 'pagamento.html';
+                });
+            }
+        });
+        function getCart() {
+            return JSON.parse(localStorage.getItem('cart') || '[]');
+        }
+        function getPickupTime() {
+            return localStorage.getItem('pickupTime') || '--:--';
+        }
+        function renderResumo() {
+            const cart = getCart();
+            let subtotal = 0;
+            cart.forEach(item => {
+                subtotal += (Number(item.price) * (item.quantity || 1));
+            });
+            document.getElementById('subtotal').textContent = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+            document.getElementById('total').textContent = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+            document.getElementById('pickup-time').textContent = getPickupTime();
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            // Atualiza resumo ao carregar
+            renderResumo();
+            // Atualiza resumo ao mudar horário
+            var select = document.getElementById('pickup-time-select');
+            if (select) {
+                select.addEventListener('change', function () {
+                    localStorage.setItem('pickupTime', select.value);
+                    renderResumo();
+                });
+            }
+            // Atualiza resumo ao mudar carrinho
+            window.addEventListener('storage', renderResumo);
+            document.addEventListener('cart-updated', renderResumo);
+        });
+    </script>
 </body>
 
 </html>
