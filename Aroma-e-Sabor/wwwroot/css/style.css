@@ -91,7 +91,7 @@ body {
 
 .btn-primary {
     width: 100%;
-    background-color: #b30000;
+    background-color:#850000;
     color: white;
     border: none;
     padding: 12px;
@@ -124,14 +124,14 @@ body {
 }
 
 .header {
-    background-color: #b30000;
+    background-color: #850000;
     color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 15px 20px;
     font-size: 18px;
-    border-bottom: 2px solid #a00000;
+    border-bottom: 2px solid #850000;
 }
 
 .back-btn {
@@ -228,7 +228,7 @@ body {
 }
 
 .highlight-box {
-    background-color: #b30000;
+    background-color: #850000;
     color: white;
     padding: 20px;
     text-align: center;
@@ -245,19 +245,46 @@ body {
 
 .category-menu {
     display: flex;
-    justify-content: space-around;
-    margin: 10px 0;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto 24px auto;
+    padding: 0 12px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.04);
+    height: 38px;
+    position: relative;
+    z-index: 2;
 }
 
 .category-menu a {
+    flex: 1;
     text-align: center;
-    font-size: 14px;
+    font-size: 15px;
     text-decoration: none;
     color: #850000;
+    font-weight: 500;
+    padding: 8px 0;
+    border-radius: 12px;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+}
+
+.category-menu a.active,
+.category-menu a:hover {
+    background: #ffe4ec;
+    color:#850000;
+    font-weight: bold;
+}
 }
 
 .product-list {
-    padding: 10px 15px;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto 10px auto;
+    padding: 0;
 }
 
 .product {
@@ -269,6 +296,7 @@ body {
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
     align-items: center;
     gap: 12px;
+    width: 100%;
 }
 
 .product img {
@@ -283,7 +311,7 @@ body {
 
 /* Footer */
 .footer-nav {
-    background-color: #b30000;
+    background-color: #850000;
     color: white;
     display: flex;
     justify-content: space-around;
@@ -398,7 +426,7 @@ body {
 }
 
 .cart-item button {
-    background: #b30000;
+    background: #850000;
     color: white;
     border: none;
     padding: 4px 10px;
@@ -531,7 +559,7 @@ body {
 }
 
 .pickup-banner {
-    background: #a8002c;
+    background: #850000;
     color: #fff;
     border-radius: 22px;
     display: flex;
@@ -542,6 +570,29 @@ body {
     /* <-- aumente aqui */
     margin: 36px auto 24px auto;
     box-shadow: 0 2px 12px #0002;
+}
+
+.product-list {
+    max-width: 80vw;
+    width: 100%;
+    margin: 0 auto 10px auto;
+    padding: 0;
+}
+
+/* Deixa os cards com as pontas arredondadas como na imagem 6 */
+.product-list>.product:first-child {
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}
+
+.product-list>.product:last-child {
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+}
+
+.product-list>.product {
+    border-radius: 0;
+    /* Remove arredondamento padrão para aplicar só nas pontas */
 }
 
 .banner-img img {
@@ -574,7 +625,7 @@ body {
 
 .btn-primary {
     background: #fff;
-    color: #a8002c;
+    color:#850000;
     border: none;
     border-radius: 8px;
     padding: 10px 26px;
