@@ -299,6 +299,73 @@ body {
     font-size: 14px;
 }
 
+/* Sidebar lateral estilo (imagem 5) */
+.sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    background: #f8e7c4;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(.4, 0, .2, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-menu.open {
+    transform: translateX(0);
+}
+
+.sidebar-logo {
+    background: #850000;
+    color: #ffcc00;
+    padding: 32px 0 18px 0;
+    text-align: center;
+    font-size: 1.5rem;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.sidebar-logo h1 {
+    margin: 0;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+.sidebar-nav {
+    flex: 1;
+    padding: 24px 24px 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar-nav a {
+    color: #850000;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0cfa0;
+    transition: color 0.2s;
+}
+
+.sidebar-nav a.active,
+.sidebar-nav a:hover {
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .sidebar-menu {
+        width: 80vw;
+        min-width: 180px;
+        max-width: 320px;
+    }
+}
+
 .footer-nav a.active {
     font-weight: bold;
 }
