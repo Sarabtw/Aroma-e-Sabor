@@ -77,6 +77,10 @@
       "PackagePath": "staticwebassets\\img\\mentos.png"
     },
     {
+      "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\img\\qrcode.png",
+      "PackagePath": "staticwebassets\\img\\qrcode.png"
+    },
+    {
       "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\img\\sacola.png",
       "PackagePath": "staticwebassets\\img\\sacola.png"
     },
@@ -87,6 +91,14 @@
     {
       "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\js\\carrinho.js",
+      "PackagePath": "staticwebassets\\js\\carrinho.js"
+    },
+    {
+      "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\js\\cart.js",
+      "PackagePath": "staticwebassets\\js\\cart.js"
     },
     {
       "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\js\\sidebar.js",

@@ -29,12 +29,12 @@
 
     <header class="header top-bar" style="position:relative;z-index:101;">
         <div class="menu-icon" id="menu-icon" style="font-size:2rem;cursor:pointer;">☰</div>
-        
+
         <h2 style="margin-left:12px;">Carrinho</h2>
     </header>
 
     <section class="cart-items">
-        <!-- Itens do carrinho serão renderizados aqui pelo JS -->
+        <div id="cart-items"><!-- Itens do carrinho serão renderizados aqui pelo JS --></div>
     </section>
 
     <section class="pickup-time-box"
@@ -62,8 +62,8 @@
             <p style="margin:0;">SubTotal: <strong id="subtotal">R$ 0,00</strong></p>
             <p style="margin:0;">Retirada às: <strong id="pickup-time">--:--</strong></p>
             <p style="margin:0 0 8px 0;">Total: <strong id="total">R$ 0,00</strong></p>
-            <button class="btn-primary" id="finalizar-btn"
-                style="width:100%;font-size:1.1rem;padding:12px 0;">Finalizar</button>
+            <button class="btn-primary" id="finalizar-btn" style="width:100%;font-size:1.1rem;padding:12px 0;">Escolher
+                método de pagamento</button>
         </div>
     </section>
 
@@ -81,37 +81,21 @@
                     window.location.href = 'pagamento.html';
                 });
             }
-        });
-        function getCart() {
-            return JSON.parse(localStorage.getItem('cart') || '[]');
-        }
-        function getPickupTime() {
-            return localStorage.getItem('pickupTime') || '--:--';
-        }
-        function renderResumo() {
-            const cart = getCart();
-            let subtotal = 0;
-            cart.forEach(item => {
-                subtotal += (Number(item.price) * (item.quantity || 1));
-            });
-            document.getElementById('subtotal').textContent = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
-            document.getElementById('total').textContent = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
-            document.getElementById('pickup-time').textContent = getPickupTime();
-        }
-        document.addEventListener('DOMContentLoaded', function () {
-            // Atualiza resumo ao carregar
-            renderResumo();
             // Atualiza resumo ao mudar horário
             var select = document.getElementById('pickup-time-select');
             if (select) {
                 select.addEventListener('change', function () {
                     localStorage.setItem('pickupTime', select.value);
-                    renderResumo();
+                    if (typeof window.renderResumo === 'function') window.renderResumo();
                 });
             }
             // Atualiza resumo ao mudar carrinho
-            window.addEventListener('storage', renderResumo);
-            document.addEventListener('cart-updated', renderResumo);
+            window.addEventListener('storage', function () {
+                if (typeof window.renderResumo === 'function') window.renderResumo();
+            });
+            document.addEventListener('cart-updated', function () {
+                if (typeof window.renderResumo === 'function') window.renderResumo();
+            });
         });
     </script>
 </body>

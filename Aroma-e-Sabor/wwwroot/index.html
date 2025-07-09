@@ -10,14 +10,26 @@
 
 <body class="splash-screen">
 
-    <div class="logo-image-container">
-        <img src="img/Design sem nome (6).png" alt="Logo Aroma e Sabor" class="logo-img" />
+    <div class="logo-image-container"
+        style="position:fixed;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fff;">
+        <img src="img/Design sem nome (6).png" alt="Logo Aroma e Sabor" class="logo-img"
+            style="width:100vw;height:100vh;object-fit:cover;object-position:center;position:absolute;inset:0;z-index:1;" />
+        <div
+            style="position:relative;z-index:2;display:flex;flex-direction:column;gap:18px;width:100%;max-width:320px;margin:auto;margin-top:auto;margin-bottom:48px;">
+            <a href="login.html" class="btn-primary"
+                style="width:100%;font-size:1.1rem;background:#a8002c;color:#fff;border-radius:24px;padding:12px 0;font-weight:bold;box-shadow:none;text-align:center;transition:filter .2s;">Entre</a>
+            <a href="cadastro.html" class="btn-secondary"
+                style="width:100%;font-size:1.1rem;background:#fff;color:#a8002c;border:2px solid #a8002c;border-radius:24px;padding:12px 0;font-weight:bold;box-shadow:none;text-align:center;transition:filter .2s;">Cadastre-se</a>
+            <button id="btn-visitante" class="btn-tertiary"
+                style="width:100%;font-size:1.1rem;background:#eee;color:#a8002c;border:1.5px solid #a8002c;border-radius:24px;padding:12px 0;font-weight:bold;box-shadow:none;cursor:pointer;text-align:center;transition:filter .2s;">Entrar
+                como visitante</button>
+        </div>
     </div>
-
     <script>
-        document.addEventListener('click', function () {
+        document.getElementById('btn-visitante').onclick = function () {
+            localStorage.setItem('visitante', 'true');
             window.location.href = 'home.html';
-        });
+        };
     </script>
 </body>
 

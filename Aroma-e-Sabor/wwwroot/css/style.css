@@ -1,3 +1,97 @@
+/* --- Carrinho visual imagem 7 --- */
+.cart-item7 {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px #0001;
+    margin-bottom: 18px;
+    padding: 14px 18px;
+    gap: 18px;
+    min-height: 90px;
+}
+
+.cart-item7-imgbox {
+    flex-shrink: 0;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffe4ec;
+    border-radius: 14px;
+    box-shadow: 0 1px 4px #0001;
+}
+
+.cart-item7-img {
+    width: 54px;
+    height: 54px;
+    object-fit: contain;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.cart-item7-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.cart-item7-title {
+    font-weight: bold;
+    font-size: 1.15rem;
+    color: #a8002c;
+}
+
+.cart-item7-price {
+    color: #888;
+    font-size: 1rem;
+}
+
+.cart-item7-qtybox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffe4ec;
+    border-radius: 12px;
+    padding: 4px 10px;
+}
+
+.qty-btn7 {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: #fff;
+    color: #a8002c;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 1px 4px #0001;
+    transition: background 0.2s;
+}
+
+.qty-btn7:hover {
+    background: #ffd6e6;
+}
+
+.cart-item7-qty {
+    min-width: 22px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #a8002c;
+}
+
+.cart-item7-total {
+    width: 80px;
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #850000;
+}
+
 /* Reset geral */
 * {
     margin: 0;
@@ -91,7 +185,7 @@ body {
 
 .btn-primary {
     width: 100%;
-    background-color:#850000;
+    background-color: #850000;
     color: white;
     border: none;
     padding: 12px;
@@ -275,7 +369,7 @@ body {
 .category-menu a.active,
 .category-menu a:hover {
     background: #ffe4ec;
-    color:#850000;
+    color: #850000;
     font-weight: bold;
 }
 }
@@ -625,7 +719,7 @@ body {
 
 .btn-primary {
     background: #fff;
-    color:#850000;
+    color: #850000;
     border: none;
     border-radius: 8px;
     padding: 10px 26px;
