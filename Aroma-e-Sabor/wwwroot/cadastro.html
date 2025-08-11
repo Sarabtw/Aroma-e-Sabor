@@ -15,14 +15,87 @@
         <div class="menu-icon">☰</div>
     </header>
 
-    <form class="form-box">
-        <input type="email" placeholder="Email" class="input-field" />
-        <input type="text" placeholder="Seu nome" class="input-field" />
-        <input type="text" placeholder="Usuário" class="input-field" />
-        <input type="password" placeholder="Senha" class="input-field" />
-        <input type="password" placeholder="Repita senha" class="input-field" />
-        <button class="btn-primary">Crie conta</button>
+    <form class="form-box" id="cadastroForm" autocomplete="off">
+        <label style="margin-bottom:8px;display:block;">Foto de perfil (opcional):
+            <input type="file" id="fotoPerfil" accept="image/*" style="margin-bottom:10px;" />
+        </label>
+        <input type="email" placeholder="Email" class="input-field" id="email" required />
+        <input type="text" placeholder="Seu nome" class="input-field" id="nome" required />
+        <input type="text" placeholder="Usuário" class="input-field" id="usuario" required />
+        <input type="password" placeholder="Senha" class="input-field" id="senha" required />
+        <input type="password" placeholder="Repita senha" class="input-field" id="repitaSenha" required />
+        <div id="erroMsg" style="color: red; margin-bottom: 10px; display: none;"></div>
+        <button type="submit" class="btn-primary">Criar conta</button>
     </form>
+    <script src="js/perfil.js"></script>
+    <script>
+        document.getElementById('cadastroForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value.trim();
+            const nome = document.getElementById('nome').value.trim();
+            const usuario = document.getElementById('usuario').value.trim();
+            const senha = document.getElementById('senha').value;
+            const repitaSenha = document.getElementById('repitaSenha').value;
+            const erroMsg = document.getElementById('erroMsg');
+            const fotoInput = document.getElementById('fotoPerfil');
+            erroMsg.style.display = 'none';
+            erroMsg.innerText = '';
+
+            // Verifica se todos os campos estão preenchidos
+            if (!email || !nome || !usuario || !senha || !repitaSenha) {
+                erroMsg.innerText = 'Todos os campos são obrigatórios.';
+                erroMsg.style.display = 'block';
+                return;
+            }
+
+            // Verifica se as senhas coincidem
+            if (senha !== repitaSenha) {
+                erroMsg.innerText = 'As senhas não coincidem.';
+                erroMsg.style.display = 'block';
+                return;
+            }
+
+            // Validação de tamanho mínimo da senha
+            if (senha.length < 6) {
+                erroMsg.innerText = 'A senha deve ter no mínimo 6 caracteres.';
+                erroMsg.style.display = 'block';
+                return;
+            }
+            // Validação de senha forte
+            const regexMaiuscula = /[A-Z]/;
+            const regexNumero = /[0-9]/;
+            const regexEspecial = /[!@#$%^&*(),.?":{}|<>]/;
+            if (!regexMaiuscula.test(senha) || !regexNumero.test(senha) || !regexEspecial.test(senha)) {
+                erroMsg.innerText = 'A senha deve conter pelo menos uma letra maiúscula, um número e um caractere especial.';
+                erroMsg.style.display = 'block';
+                return;
+            }
+
+            // Se passou por todas as validações, pode prosseguir
+            erroMsg.style.color = 'green';
+            erroMsg.innerText = 'Conta criada com sucesso! Redirecionando...';
+            erroMsg.style.display = 'block';
+            // Salva o nome do usuário para exibir no topo da home após login
+            setUsuarioLogado(nome || email.split('@')[0] || 'Visitante');
+            localStorage.setItem('visitante', 'false'); // Desativa modo visitante ao criar conta
+
+            // Salva a foto de perfil (base64) no localStorage (opcional)
+            if (fotoInput && fotoInput.files && fotoInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function (evt) {
+                    localStorage.setItem('fotoPerfil', evt.target.result);
+                    setTimeout(function () {
+                        window.location.href = 'login.html';
+                    }, 1500);
+                };
+                reader.readAsDataURL(fotoInput.files[0]);
+            } else {
+                setTimeout(function () {
+                    window.location.href = 'login.html';
+                }, 1500);
+            }
+        });
+    </script>
 </body>
 
 </html>

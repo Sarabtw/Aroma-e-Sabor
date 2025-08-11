@@ -11,7 +11,7 @@
 <body class="pagamento-page">
 
 
-    <!-- Sidebar lateral -->
+
     <nav id="sidebar-menu" class="sidebar-menu">
         <div class="sidebar-logo">
             <h1>Aroma <span class="e">e</span> <span class="sabor">Sabor</span></h1>
@@ -165,8 +165,20 @@
                         var btnFinalizar = document.getElementById('btn-finalizar-pedido-resumo');
                         if (btnFinalizar) {
                             btnFinalizar.onclick = function () {
-                                alert('Pedido finalizado com sucesso!');
-                                // Aqui você pode adicionar lógica extra, como limpar o carrinho, redirecionar, etc.
+                                // Mensagem visual de sucesso
+                                let msg = document.createElement('div');
+                                msg.style.marginTop = '16px';
+                                msg.style.color = '#228B22';
+                                msg.style.fontWeight = 'bold';
+                                msg.textContent = 'Pedido finalizado com sucesso! Comprovante enviado por email.';
+                                finalizarPedidoContainer.appendChild(msg);
+                                btnFinalizar.disabled = true;
+                                setTimeout(function () {
+                                    // Aqui você pode adicionar lógica extra, como limpar o carrinho, redirecionar, etc.
+                                    localStorage.removeItem('cart');
+                                    msg.remove();
+                                    btnFinalizar.disabled = false;
+                                }, 2200);
                             };
                         }
                     } else {
@@ -244,8 +256,19 @@
                             };
                             // Finalizar pedido (aqui você pode colocar lógica extra se quiser)
                             modalBg.querySelector('#btn-finalizar-pedido').onclick = function () {
-                                alert('Pedido finalizado com sucesso!');
-                                document.body.removeChild(modalBg);
+                                // Remove alert, mostra mensagem visual no modal
+                                let msg = document.createElement('div');
+                                msg.style.marginTop = '16px';
+                                msg.style.color = '#228B22';
+                                msg.style.fontWeight = 'bold';
+                                msg.textContent = 'Pedido finalizado com sucesso! Comprovante enviado por email.';
+                                modalBg.querySelector('.pix-modal').appendChild(msg);
+                                // Desabilita botão para evitar múltiplos cliques
+                                modalBg.querySelector('#btn-finalizar-pedido').disabled = true;
+                                setTimeout(function () {
+                                    localStorage.removeItem('cart');
+                                    document.body.removeChild(modalBg);
+                                }, 2200);
                             };
                         }
                         // Destaca o método já selecionado

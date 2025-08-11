@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "S8nVKlGm9R75FAptIpTB6ziiB3hRHDpZUt8A7GUNI9c=",
+  "Hash": "3MVTtaC2Kut9dcVIdg7j/1U1SJElbPdKpZucnEPIkuQ=",
   "Source": "Aroma-e-Sabor",
   "BasePath": "_content/Aroma-e-Sabor",
   "Mode": "Default",
@@ -490,6 +490,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\cart.js"
+    },
+    {
+      "Identity": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\js\\perfil.js",
+      "SourceId": "Aroma-e-Sabor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\",
+      "BasePath": "_content/Aroma-e-Sabor",
+      "RelativePath": "js/perfil.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\perfil.js"
     },
     {
       "Identity": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\js\\sidebar.js",

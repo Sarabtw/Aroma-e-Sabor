@@ -28,28 +28,21 @@ function updateCartCount() {
     if (footer) footer.textContent = count;
 }
 
+
 document.addEventListener('DOMContentLoaded', function () {
-    // Se visitante, redireciona para login ao tentar qualquer ação
-    if (localStorage.getItem('visitante') === 'true') {
-        document.querySelectorAll('.add-cart-btn, .btn-primary, .btn-secondary').forEach(btn => {
-            btn.addEventListener('click', function (e) {
+    // Botões de adicionar ao carrinho
+    document.querySelectorAll('.add-cart-btn').forEach(btn => {
+        btn.addEventListener('click', function (e) {
+            // Só redireciona para login se visitante
+            if (localStorage.getItem('visitante') === 'true') {
                 e.preventDefault();
                 window.location.href = 'login.html';
-            });
-            btn.disabled = false;
-            btn.style.opacity = '1';
-            btn.title = 'Faça login para usar esta função';
-            btn.style.cursor = 'pointer';
+                return;
+            }
+            const name = btn.getAttribute('data-name');
+            const price = parseFloat(btn.getAttribute('data-price'));
+            addToCart({ name, price });
         });
-    } else {
-        // Botões de adicionar ao carrinho
-        document.querySelectorAll('.add-cart-btn').forEach(btn => {
-            btn.addEventListener('click', function () {
-                const name = btn.getAttribute('data-name');
-                const price = parseFloat(btn.getAttribute('data-price'));
-                addToCart({ name, price });
-            });
-        });
-    }
+    });
     updateCartCount();
 });

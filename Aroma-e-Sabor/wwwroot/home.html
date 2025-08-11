@@ -8,6 +8,24 @@
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/sidebar.js" defer></script>
     <script src="js/cart.js" defer></script>
+    <script src="js/perfil.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var cartBtn = document.getElementById('cart-navbar-btn');
+            if (cartBtn) {
+                if (localStorage.getItem('visitante') === 'true') {
+                    cartBtn.removeAttribute('href');
+                    cartBtn.style.opacity = '0.5';
+                    cartBtn.style.cursor = 'not-allowed';
+                    cartBtn.title = 'Faça login para acessar o carrinho';
+                    cartBtn.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        window.location.href = 'login.html';
+                    });
+                }
+            }
+        });
+    </script>
 </head>
 
 <body class="home-page">
