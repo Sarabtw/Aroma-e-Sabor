@@ -71,28 +71,41 @@
                 return;
             }
 
-            // Se passou por todas as validações, pode prosseguir
-            erroMsg.style.color = 'green';
-            erroMsg.innerText = 'Conta criada com sucesso! Redirecionando...';
-            erroMsg.style.display = 'block';
-            // Salva o nome do usuário para exibir no topo da home após login
-            setUsuarioLogado(nome || email.split('@')[0] || 'Visitante');
-            localStorage.setItem('visitante', 'false'); // Desativa modo visitante ao criar conta
-
-            // Salva a foto de perfil (base64) no localStorage (opcional)
+            // Foto de perfil (opcional)
             if (fotoInput && fotoInput.files && fotoInput.files[0]) {
                 const reader = new FileReader();
                 reader.onload = function (evt) {
-                    localStorage.setItem('fotoPerfil', evt.target.result);
-                    setTimeout(function () {
-                        window.location.href = 'login.html';
-                    }, 1500);
+                    enviarCadastro(email, nome, senha, evt.target.result);
                 };
                 reader.readAsDataURL(fotoInput.files[0]);
             } else {
-                setTimeout(function () {
-                    window.location.href = 'login.html';
-                }, 1500);
+                enviarCadastro(email, nome, senha, null);
+            }
+
+            function enviarCadastro(email, nome, senha, fotoPerfil) {
+                fetch('/api/usuarios/cadastro', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, nome, senha, fotoPerfil })
+                })
+                    .then(async resp => {
+                        if (resp.ok) {
+                            erroMsg.style.color = 'green';
+                            erroMsg.innerText = 'Conta criada com sucesso! Redirecionando...';
+                            erroMsg.style.display = 'block';
+                            setTimeout(() => window.location.href = 'login.html', 1500);
+                        } else {
+                            const data = await resp.text();
+                            erroMsg.style.color = 'red';
+                            erroMsg.innerText = data || 'Erro ao cadastrar.';
+                            erroMsg.style.display = 'block';
+                        }
+                    })
+                    .catch(() => {
+                        erroMsg.style.color = 'red';
+                        erroMsg.innerText = 'Erro ao conectar com o servidor.';
+                        erroMsg.style.display = 'block';
+                    });
             }
         });
     </script>

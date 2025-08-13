@@ -15,16 +15,19 @@
     </div>
 
     <div class="login-box">
-        <input type="email" placeholder="Email" class="input-field" id="loginEmail" />
-        <input type="password" placeholder="Senha" class="input-field" id="loginSenha" />
+        <form id="loginForm" autocomplete="on">
+            <input type="email" placeholder="Email" class="input-field" id="loginEmail" required />
+            <input type="password" placeholder="Senha" class="input-field" id="loginSenha" required />
 
-        <div class="options">
-            <label><input type="checkbox" /> Lembre-se</label>
-            <a href="esqueci.html">Esqueceu a senha?</a>
-        </div>
+            <div class="options">
+                <label><input type="checkbox" /> Lembre-se</label>
+                <a href="esqueci.html">Esqueceu a senha?</a>
+            </div>
 
-        <button id="btnLogin" class="btn-primary">Entre</button>
+            <button id="btnLogin" class="btn-primary" type="button">Acessar</button>
 
+
+        </form>
         <p class="register-link">
             Não tem uma conta? <a href="cadastro.html">Crie uma conta</a>
         </p>
@@ -33,15 +36,54 @@
 
     <script src="js/perfil.js"></script>
     <script>
-        document.getElementById('btnLogin').addEventListener('click', function (e) {
-            e.preventDefault();
-            // Aqui você pode adicionar validação de login se desejar
+
+        // Botão acessar só envia se login for válido
+        document.getElementById('btnLogin').addEventListener('click', function () {
             var email = document.getElementById('loginEmail').value.trim();
-            var nome = email ? email.split('@')[0] : 'Visitante';
-            setUsuarioLogado(nome);
-            localStorage.setItem('visitante', 'false'); // Desativa modo visitante ao logar
-            window.location.href = 'home.html';
+            var senha = document.getElementById('loginSenha').value;
+            var erroMsg = document.getElementById('erroMsg');
+            if (!erroMsg) {
+                erroMsg = document.createElement('div');
+                erroMsg.id = 'erroMsg';
+                erroMsg.style.color = 'red';
+                erroMsg.style.marginBottom = '10px';
+                document.getElementById('loginForm').insertBefore(erroMsg, document.getElementById('btnLogin'));
+            }
+            erroMsg.style.display = 'none';
+            erroMsg.innerText = '';
+            if (!email || !senha) {
+                erroMsg.innerText = 'Preencha o email e a senha.';
+                erroMsg.style.display = 'block';
+                return;
+            }
+            fetch('/api/usuarios/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, senha }) // NÃO envie nome aqui!
+            })
+                .then(async resp => {
+                    if (resp.ok) {
+                        const data = await resp.json();
+                        setUsuarioLogado(data.nome || data.email.split('@')[0] || 'Usuário');
+                        localStorage.setItem('usuarioId', data.id); // Salva o id do usuário logado
+                        localStorage.setItem('visitante', 'false');
+                        if (data.fotoPerfil) localStorage.setItem('fotoPerfil', data.fotoPerfil);
+                        window.location.href = 'home.html';
+                    } else {
+                        localStorage.setItem('visitante', 'false');
+                        const msg = await resp.text();
+                        erroMsg.innerText = msg || 'Email ou senha inválidos.';
+                        erroMsg.style.display = 'block';
+                    }
+                })
+                .catch(() => {
+                    localStorage.setItem('visitante', 'false');
+                    erroMsg.innerText = 'Erro ao conectar com o servidor.';
+                    erroMsg.style.display = 'block';
+                });
         });
+
+        // (Lógica de visitante removida)
     </script>
 </body>
 

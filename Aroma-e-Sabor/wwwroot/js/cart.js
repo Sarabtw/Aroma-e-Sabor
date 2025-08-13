@@ -17,6 +17,20 @@ function addToCart(item) {
     }
     setCart(cart);
     updateCartCount();
+    // Envia para o banco
+    const usuarioId = localStorage.getItem('usuarioId');
+    if (usuarioId) {
+        fetch('/api/carrinho/adicionar', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                nome: item.name,
+                quantidade: 1,
+                preco: item.price,
+                usuarioId: parseInt(usuarioId)
+            })
+        });
+    }
 }
 
 function updateCartCount() {

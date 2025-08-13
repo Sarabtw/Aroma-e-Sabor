@@ -76,9 +76,37 @@
         document.addEventListener('DOMContentLoaded', function () {
             var btn = document.getElementById('finalizar-btn');
             if (btn) {
-                btn.addEventListener('click', function (e) {
+                btn.addEventListener('click', async function (e) {
                     e.preventDefault();
-                    window.location.href = 'pagamento.html';
+                    const usuarioId = localStorage.getItem('usuarioId');
+                    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+                    if (!usuarioId || cart.length === 0) {
+                        alert('Faça login e adicione itens ao carrinho!');
+                        return;
+                    }
+                    let sucesso = true;
+                    for (const item of cart) {
+                        console.log('Enviando para API:', { nome: item.name, quantidade: item.qty, preco: item.price, usuarioId: parseInt(usuarioId) });
+                        const resp = await fetch('/api/carrinho/adicionar', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                nome: item.name,
+                                quantidade: item.qty,
+                                preco: item.price,
+                                usuarioId: parseInt(usuarioId)
+                            })
+                        });
+                        if (!resp.ok) {
+                            sucesso = false;
+                            const msg = await resp.text();
+                            alert('Erro ao salvar item no banco: ' + msg);
+                        }
+                    }
+                    if (sucesso) {
+                        alert('Itens enviados para o banco com sucesso!');
+                        window.location.href = 'pagamento.html';
+                    }
                 });
             }
             // Atualiza resumo ao mudar horário

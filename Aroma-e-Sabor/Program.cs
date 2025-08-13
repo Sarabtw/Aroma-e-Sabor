@@ -1,4 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using Aroma_e_Sabor.Data;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Configura o DbContext para usar MySQL
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<Aroma_e_Sabor.Data.AppDbContext>(options =>
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 // Adiciona serviços ao contêiner (exemplo: CORS, controllers)
 builder.Services.AddCors(options =>

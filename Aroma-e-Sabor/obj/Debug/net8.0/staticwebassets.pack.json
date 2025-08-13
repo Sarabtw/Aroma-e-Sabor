@@ -21,8 +21,16 @@
       "PackagePath": "staticwebassets\\home.html"
     },
     {
+      "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\img\\1 - Copia.png",
+      "PackagePath": "staticwebassets\\img\\1 - Copia.png"
+    },
+    {
       "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\img\\1.png",
       "PackagePath": "staticwebassets\\img\\1.png"
+    },
+    {
+      "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\img\\2 - Copia.png",
+      "PackagePath": "staticwebassets\\img\\2 - Copia.png"
     },
     {
       "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\img\\2.png",
@@ -47,6 +55,10 @@
     {
       "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\img\\7.png",
       "PackagePath": "staticwebassets\\img\\7.png"
+    },
+    {
+      "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\img\\8 - Copia.png",
+      "PackagePath": "staticwebassets\\img\\8 - Copia.png"
     },
     {
       "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\img\\8.png",
@@ -107,6 +119,10 @@
     {
       "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\js\\sidebar.js",
       "PackagePath": "staticwebassets\\js\\sidebar.js"
+    },
+    {
+      "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\lanches.html",
+      "PackagePath": "staticwebassets\\lanches.html"
     },
     {
       "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\login.html",
