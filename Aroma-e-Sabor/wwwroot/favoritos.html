@@ -40,12 +40,44 @@
         <div class="sidebar-nav">
             <a href="home.html" class="active">🏠 Início</a>
             <a href="lanches.html">🍔 Lanches</a>
-            <a href="#">🥤 Bebidas</a>
-            <a href="#">⭐ Favoritos</a>
-            <a href="#">💳 Pagamentos</a>
+            <a href="bebidas.html">🥤 Bebidas</a>
+            <a href="favoritos.html">⭐ Favoritos</a>
+            <a href="pagamento.html">💳 Pagamentos</a>
 
             <a href="#" id="sidebar-logout">🚪 Sair</a>
         </div>
+    </nav>
+    <script src="js/perfil.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var sidebarLogout = document.getElementById('sidebar-logout');
+            if (sidebarLogout) {
+                sidebarLogout.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    localStorage.clear();
+                    localStorage.setItem('visitante', 'true');
+                    window.location.href = 'login.html';
+                });
+            }
+        });
+    </script>
+    </div>
+    </nav>
+    <script src="js/perfil.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var sidebarLogout = document.getElementById('sidebar-logout');
+            if (sidebarLogout) {
+                sidebarLogout.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    localStorage.clear();
+                    localStorage.setItem('visitante', 'true');
+                    window.location.href = 'login.html';
+                });
+            }
+        });
+    </script>
+    </div>
     </nav>
     <script src="js/perfil.js" defer></script>
     <script>

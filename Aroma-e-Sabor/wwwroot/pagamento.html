@@ -17,14 +17,30 @@
             <h1>Aroma <span class="e">e</span> <span class="sabor">Sabor</span></h1>
         </div>
         <div class="sidebar-nav">
-            <a href="home.html">🏠 Início</a>
-            <a href="#">🍔 Lanches</a>
-            <a href="#">🥤 Bebidas</a>
-            <a href="#">⭐ Favoritos</a>
-            <a href="#">💳 Pagamentos</a>
-            <a href="#">⚙️ Configurações</a>
-            <a href="#">🚪 Sair</a>
+            <a href="home.html" class="active">🏠 Início</a>
+            <a href="lanches.html">🍔 Lanches</a>
+            <a href="bebidas.html">🥤 Bebidas</a>
+            <a href="favoritos.html">⭐ Favoritos</a>
+            <a href="pagamento.html">💳 Pagamentos</a>
+
+            <a href="#" id="sidebar-logout">🚪 Sair</a>
         </div>
+    </nav>
+    <script src="js/perfil.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var sidebarLogout = document.getElementById('sidebar-logout');
+            if (sidebarLogout) {
+                sidebarLogout.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    localStorage.clear();
+                    localStorage.setItem('visitante', 'true');
+                    window.location.href = 'login.html';
+                });
+            }
+        });
+    </script>
+    </div>
     </nav>
 
     <header class="header"
@@ -59,21 +75,8 @@
     <section class="historico-transacao"
         style="width:100%;background:#f8ebcd;padding:18px 0 18px 0;z-index:10;position:relative;">
         <div style="max-width:700px;margin:0 auto;">
-            <h4 style="font-size:1.1rem;font-weight:bold;margin-bottom:8px;">Histórico de Transação</h4>
-            <ul style="margin:0;padding:0;list-style:none;">
-                <li style="background:#fff;border-radius:10px;padding:12px 18px;margin-bottom:10px;">
-                    Coxinha de frango, Lata Guaraná 220ml e Bala mentos <br>
-                    <small style="color:#a8002c;">PIX</small> — <strong style="color:#222;">R$ 13,00</strong>
-                </li>
-                <li style="background:#fff;border-radius:10px;padding:12px 18px;margin-bottom:10px;">
-                    Pipoca microondas e Lata Fanta Laranja 220ml <br>
-                    <small style="color:#a8002c;">Cartão Débito</small> — <strong style="color:#222;">R$ 11,00</strong>
-                </li>
-                <li style="background:#fff;border-radius:10px;padding:12px 18px;">
-                    Bala mentos e Chiclete Trident <br>
-                    <small style="color:#a8002c;">PIX</small> — <strong style="color:#222;">R$ 6,00</strong>
-                </li>
-            </ul>
+            <h4 style="font-size:1.1rem;font-weight:bold;margin-bottom:8px;">Histórico de Pedidos</h4>
+            <div id="historico-pedidos"></div>
         </div>
     </section>
 
@@ -127,6 +130,8 @@
         }
     </style>
     <script src="js/sidebar.js"></script>
+    <script src="js/pedido.js"></script>
+    <script src="js/historico.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Resumo do pedido
@@ -165,6 +170,9 @@
                         var btnFinalizar = document.getElementById('btn-finalizar-pedido-resumo');
                         if (btnFinalizar) {
                             btnFinalizar.onclick = function () {
+                                // Salva pedido no backend
+                                var metodo = localStorage.getItem('metodoPagamento') || 'Nenhum selecionado';
+                                window.salvarPedidoNoBackend(metodo);
                                 // Mensagem visual de sucesso
                                 let msg = document.createElement('div');
                                 msg.style.marginTop = '16px';
@@ -174,7 +182,6 @@
                                 finalizarPedidoContainer.appendChild(msg);
                                 btnFinalizar.disabled = true;
                                 setTimeout(function () {
-                                    // Aqui você pode adicionar lógica extra, como limpar o carrinho, redirecionar, etc.
                                     localStorage.removeItem('cart');
                                     msg.remove();
                                     btnFinalizar.disabled = false;
@@ -256,6 +263,8 @@
                             };
                             // Finalizar pedido (aqui você pode colocar lógica extra se quiser)
                             modalBg.querySelector('#btn-finalizar-pedido').onclick = function () {
+                                // Salva pedido no backend
+                                window.salvarPedidoNoBackend('PIX');
                                 // Remove alert, mostra mensagem visual no modal
                                 let msg = document.createElement('div');
                                 msg.style.marginTop = '16px';

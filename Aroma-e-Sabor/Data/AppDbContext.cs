@@ -9,5 +9,7 @@ namespace Aroma_e_Sabor.Data
 
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<itensCarrinho> ItensCarrinho { get; set; }
+        public DbSet<Pedido> Pedidos { get; set; }
+        public DbSet<PedidoItem> PedidoItens { get; set; }
     }
 }

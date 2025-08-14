@@ -17,14 +17,30 @@
             <h1>Aroma <span class="e">e</span> <span class="sabor">Sabor</span></h1>
         </div>
         <div class="sidebar-nav">
-            <a href="home.html">🏠 Início</a>
-            <a href="#">🍔 Lanches</a>
-            <a href="#">🥤 Bebidas</a>
-            <a href="#">⭐ Favoritos</a>
-            <a href="#">💳 Pagamentos</a>
-            <a href="#">⚙️ Configurações</a>
-            <a href="#">🚪 Sair</a>
+            <a href="home.html" class="active">🏠 Início</a>
+            <a href="lanches.html">🍔 Lanches</a>
+            <a href="bebidas.html">🥤 Bebidas</a>
+            <a href="favoritos.html">⭐ Favoritos</a>
+            <a href="pagamento.html">💳 Pagamentos</a>
+
+            <a href="#" id="sidebar-logout">🚪 Sair</a>
         </div>
+    </nav>
+    <script src="js/perfil.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var sidebarLogout = document.getElementById('sidebar-logout');
+            if (sidebarLogout) {
+                sidebarLogout.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    localStorage.clear();
+                    localStorage.setItem('visitante', 'true');
+                    window.location.href = 'login.html';
+                });
+            }
+        });
+    </script>
+    </div>
     </nav>
 
     <header class="header top-bar" style="position:relative;z-index:101;">

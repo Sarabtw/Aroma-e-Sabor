@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\bebidas.html",
+      "PackagePath": "staticwebassets\\bebidas.html"
+    },
+    {
       "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\cadastro.html",
       "PackagePath": "staticwebassets\\cadastro.html"
     },
@@ -15,6 +19,10 @@
     {
       "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\esqueci.html",
       "PackagePath": "staticwebassets\\esqueci.html"
+    },
+    {
+      "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\favoritos.html",
+      "PackagePath": "staticwebassets\\favoritos.html"
     },
     {
       "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\home.html",
@@ -111,6 +119,14 @@
     {
       "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\js\\cart.js",
       "PackagePath": "staticwebassets\\js\\cart.js"
+    },
+    {
+      "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\js\\historico.js",
+      "PackagePath": "staticwebassets\\js\\historico.js"
+    },
+    {
+      "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\js\\pedido.js",
+      "PackagePath": "staticwebassets\\js\\pedido.js"
     },
     {
       "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\js\\perfil.js",
