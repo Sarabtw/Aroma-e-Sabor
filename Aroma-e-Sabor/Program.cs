@@ -19,7 +19,11 @@ builder.Services.AddCors(options =>
     });
 });
 
-builder.Services.AddControllers(); // Suporte a API Controllers
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+    }); // Suporte a API Controllers
 
 var app = builder.Build();
 

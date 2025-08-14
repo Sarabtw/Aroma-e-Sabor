@@ -23,9 +23,24 @@ function setCart(cart) {
 
 // Mapeamento simples nome -> imagem
 const itemImages = {
+    // Lanches
     'Coxinha': 'img/coxinha.png',
     'Enroladinho': 'img/salsicha.png',
-    'Lata Coca-Cola': 'img/coca.png',
+    'Empada': 'img/empada.jpg',
+    'Pastel': 'img/pastel.jpg',
+    'Hambúrguer': 'img/hamburguer assado.jpg',
+    'Bolinha de Queijo': 'img/bolinha de queijo.jpg',
+    'Kibe': 'img/kibe.jpg',
+    'Esfiha': 'img/esfiha.jpg',
+    // Bebidas
+    'Guaraná': 'img/guarana.png',
+    'Pepsi': 'img/pepsi.jpg',
+    'Coca-Cola': 'img/coca.png',
+    'Limonada': 'img/SodaLimonada.jpg',
+    'Sukita': 'img/Sukita.jpg',
+    'Suco D+ Uva': 'img/suco uva caixinha.jpg',
+    'SucoCaju': 'img/caju.jpg',
+    'Toddynho': 'img/toddynho.jpg',
 };
 
 // Estilo visual inspirado na imagem 7.png

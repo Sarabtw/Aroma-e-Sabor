@@ -22,6 +22,7 @@ namespace Aroma_e_Sabor.Controllers
             if (pedido == null || pedido.Itens == null || pedido.Itens.Count == 0)
                 return BadRequest("Pedido inválido");
             pedido.DataPedido = DateTime.Now;
+            pedido.Status = "Pendente";
             _context.Pedidos.Add(pedido);
             await _context.SaveChangesAsync();
             return Ok(pedido);
