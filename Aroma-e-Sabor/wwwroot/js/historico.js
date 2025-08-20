@@ -18,7 +18,11 @@ async function carregarHistoricoPedidos() {
                 <ul style="margin:6px 0 6px 0;padding-left:18px;">
                     ${p.itens.map(i => `<li>${i.quantidade}x ${i.nome} <span style='color:#888;'>(R$ ${(i.preco * i.quantidade).toFixed(2).replace('.', ',')})</span></li>`).join('')}
                 </ul>
-                <div><small>Método: <b>${p.metodoPagamento}</b></small> — <b style="color:#222;">Total: R$ ${p.total.toFixed(2).replace('.', ',')}</b></div>
+                                <div>
+                                    <small>Método: <b>${p.metodoPagamento}</b></small>
+                                    ${p.horarioRetirada ? `<span style="margin-left:10px;">Retirada: <b>${p.horarioRetirada}</b></span>` : ''}
+                                    — <b style="color:#222;">Total: R$ ${p.total.toFixed(2).replace('.', ',')}</b>
+                                </div>
                 <div style="font-size:0.95rem;color:#555;">Status: ${p.status}</div>
             </div>
         `).join('');

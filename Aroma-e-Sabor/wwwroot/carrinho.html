@@ -51,24 +51,23 @@
 
     <section class="cart-items">
         <div id="cart-items"><!-- Itens do carrinho serão renderizados aqui pelo JS --></div>
-    </section>
-
-    <section class="pickup-time-box"
-        style="max-width:500px;margin:0 auto 24px auto;padding:18px 18px 10px 18px;background:#fff;border-radius:18px;box-shadow:0 1px 5px rgba(0,0,0,0.04);">
-        <h3 style="margin-bottom:10px;color:#a8002c;font-size:1.1rem;">Escolha o horário de retirada:</h3>
-        <form id="pickup-time-form">
-            <select id="pickup-time-select"
-                style="width:100%;padding:10px;border-radius:8px;border:1px solid #ccc;font-size:1rem;">
-                <option value="09:00">09:00</option>
-                <option value="09:15">09:15</option>
-                <option value="09:30">09:30</option>
-                <option value="09:45">09:45</option>
-                <option value="15:00">15:00</option>
-                <option value="15:15">15:15</option>
-                <option value="15:30">15:30</option>
-                <option value="15:45">15:45</option>
-            </select>
-        </form>
+        <section class="pickup-time-box">
+            <h3 style="margin-bottom:10px;color:#a8002c;font-size:1.1rem;">Escolha o horário de retirada:</h3>
+            <form id="pickup-time-form">
+                <select id="pickup-time-select"
+                    style="width:100%;padding:10px;border-radius:8px;border:1px solid #ccc;font-size:1rem;" required>
+                    <option value="" disabled selected hidden>Selecione um horário</option>
+                    <option value="09:00">09:00</option>
+                    <option value="09:15">09:15</option>
+                    <option value="09:30">09:30</option>
+                    <option value="09:45">09:45</option>
+                    <option value="15:00">15:00</option>
+                    <option value="15:15">15:15</option>
+                    <option value="15:30">15:30</option>
+                    <option value="15:45">15:45</option>
+                </select>
+            </form>
+        </section>
     </section>
 
 
@@ -128,6 +127,9 @@
             // Atualiza resumo ao mudar horário
             var select = document.getElementById('pickup-time-select');
             if (select) {
+                // Preencher o select com o valor salvo, se houver
+                var saved = localStorage.getItem('pickupTime');
+                if (saved) select.value = saved;
                 select.addEventListener('change', function () {
                     localStorage.setItem('pickupTime', select.value);
                     if (typeof window.renderResumo === 'function') window.renderResumo();

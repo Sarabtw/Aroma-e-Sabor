@@ -13,11 +13,13 @@ async function salvarPedidoNoBackend(metodo) {
             preco: Number(item.price)
         };
     });
+    const pickupTime = localStorage.getItem('pickupTime') || null;
     const pedido = {
         usuarioId: Number(usuarioId),
         total: total,
         metodoPagamento: metodo,
-        itens: itens
+        itens: itens,
+        horarioRetirada: pickupTime
     };
     try {
         await fetch('/api/pedido/criar', {
