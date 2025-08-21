@@ -51,4 +51,7 @@ function mostrarUsuarioNoTopo() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', mostrarUsuarioNoTopo);
+document.addEventListener('DOMContentLoaded', function () {
+    mostrarUsuarioNoTopo();
+    if (typeof updateCartCount === 'function') updateCartCount();
+});

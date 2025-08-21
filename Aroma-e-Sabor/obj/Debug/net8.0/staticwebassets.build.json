@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7FkvsuDnzZTGkST4vbs3EuXowv5+W4/1+fUfi10t3jI=",
+  "Hash": "c0f3U+PXuJc4gB7SIb3PzjP4cKeiEMux4IL6kNTHt64=",
   "Source": "Aroma-e-Sabor",
   "BasePath": "_content/Aroma-e-Sabor",
   "Mode": "Default",
@@ -378,12 +378,12 @@
       "OriginalItemSpec": "wwwroot\\img\\9.png"
     },
     {
-      "Identity": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\img\\bolinha de queijo.jpg",
+      "Identity": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\img\\bolinha de queijo.png",
       "SourceId": "Aroma-e-Sabor",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\",
       "BasePath": "_content/Aroma-e-Sabor",
-      "RelativePath": "img/bolinha de queijo.jpg",
+      "RelativePath": "img/bolinha de queijo.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -394,7 +394,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\bolinha de queijo.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\bolinha de queijo.png"
     },
     {
       "Identity": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\img\\caju.jpg",
@@ -492,12 +492,12 @@
       "OriginalItemSpec": "wwwroot\\img\\empada.jpg"
     },
     {
-      "Identity": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\img\\esfiha.jpg",
+      "Identity": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\img\\esfiha (2).png",
       "SourceId": "Aroma-e-Sabor",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\",
       "BasePath": "_content/Aroma-e-Sabor",
-      "RelativePath": "img/esfiha.jpg",
+      "RelativePath": "img/esfiha (2).png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -508,7 +508,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\esfiha.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\esfiha (2).png"
     },
     {
       "Identity": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\img\\guarana.png",

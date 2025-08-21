@@ -130,9 +130,56 @@
         </div>
     </section>
 
-    <footer class="footer-nav">
+    <footer class="footer-nav" style="padding:0;background:#a8002c;">
+    <nav class="quick-nav"
+        style="display:flex;justify-content:center;gap:18px;margin:0;padding:10px 0 4px 0;background:#a8002c;">
+        <a href="home.html" class="quick-nav-link quick-nav-active">Início</a>
+        <a href="lanches.html" class="quick-nav-link">Lanches</a>
+        <a href="bebidas.html" class="quick-nav-link">Bebidas</a>
+        <a href="favoritos.html" class="quick-nav-link">Favoritos</a>
+        <a href="pagamento.html" class="quick-nav-link">Pagamentos</a>
+    </nav>
+</footer>
+<style>
+    .quick-nav-link {
+        color: #a8002c;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1.08rem;
+        padding: 4px 12px;
+        border-radius: 8px;
+        transition: background 0.2s, color 0.2s;
+        background: #a8002c;
+        margin: 0 6px;
+        min-width: unset;
+        display: inline-block;
+        box-sizing: border-box;
+    }
 
-    </footer>
+    .quick-nav-link:hover {
+        background: #ffe4ec;
+        color: #850000;
+    }
+
+    .quick-nav-active {
+        background: #a8002c;
+        color: #fff !important;
+        font-weight: bold;
+        box-shadow: 0 2px 8px #0002;
+        border: 2px solid #fff;
+        transform: scale(1.08);
+        z-index: 2;
+    }
+
+    .footer-nav {
+        width: 100vw;
+        left: 0;
+        bottom: 0;
+        position: fixed;
+        z-index: 100;
+        margin: 0;
+    }
+</style>
 
 </body>
 
