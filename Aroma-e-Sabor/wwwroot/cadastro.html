@@ -71,7 +71,8 @@
                 return;
             }
 
-            // Foto de perfil (opcional)
+
+            // Foto de perfil (opcional, mas define padrão se não houver)
             if (fotoInput && fotoInput.files && fotoInput.files[0]) {
                 const reader = new FileReader();
                 reader.onload = function (evt) {
@@ -79,7 +80,20 @@
                 };
                 reader.readAsDataURL(fotoInput.files[0]);
             } else {
-                enviarCadastro(email, nome, senha, null);
+                // Caminho da imagem padrão (ajuste se necessário)
+                fetch('img/usuario.png')
+                    .then(resp => resp.blob())
+                    .then(blob => {
+                        const reader = new FileReader();
+                        reader.onloadend = function () {
+                            enviarCadastro(email, nome, senha, reader.result);
+                        };
+                        reader.readAsDataURL(blob);
+                    })
+                    .catch(() => {
+                        // Se não encontrar a imagem, envia null
+                        enviarCadastro(email, nome, senha, null);
+                    });
             }
 
             function enviarCadastro(email, nome, senha, fotoPerfil) {
