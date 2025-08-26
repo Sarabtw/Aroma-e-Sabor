@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "c0f3U+PXuJc4gB7SIb3PzjP4cKeiEMux4IL6kNTHt64=",
+  "Hash": "q+2FUOfAk5vzkvT4FTROlcmIMwmZoFeg4Qk+sm1UOD4=",
   "Source": "Aroma-e-Sabor",
   "BasePath": "_content/Aroma-e-Sabor",
   "Mode": "Default",
@@ -587,6 +587,25 @@
       "OriginalItemSpec": "wwwroot\\img\\mentos.png"
     },
     {
+      "Identity": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\img\\MG Template DSPI 2025.pdf",
+      "SourceId": "Aroma-e-Sabor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\",
+      "BasePath": "_content/Aroma-e-Sabor",
+      "RelativePath": "img/MG Template DSPI 2025.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\MG Template DSPI 2025.pdf"
+    },
+    {
       "Identity": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\img\\pastel.jpg",
       "SourceId": "Aroma-e-Sabor",
       "SourceType": "Discovered",
@@ -756,6 +775,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\toddynho.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\img\\usuario.png",
+      "SourceId": "Aroma-e-Sabor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\",
+      "BasePath": "_content/Aroma-e-Sabor",
+      "RelativePath": "img/usuario.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\usuario.png"
     },
     {
       "Identity": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\index.html",
@@ -965,6 +1003,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\perfil.html"
+    },
+    {
+      "Identity": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\usuario.png",
+      "SourceId": "Aroma-e-Sabor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\",
+      "BasePath": "_content/Aroma-e-Sabor",
+      "RelativePath": "usuario.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\usuario.png"
     }
   ]
 }

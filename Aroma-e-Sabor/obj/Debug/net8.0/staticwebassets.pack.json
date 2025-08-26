@@ -81,6 +81,10 @@
       "PackagePath": "staticwebassets\\img\\Design sem nome (6).png"
     },
     {
+      "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\img\\MG Template DSPI 2025.pdf",
+      "PackagePath": "staticwebassets\\img\\MG Template DSPI 2025.pdf"
+    },
+    {
       "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\img\\SodaLimonada.jpg",
       "PackagePath": "staticwebassets\\img\\SodaLimonada.jpg"
     },
@@ -157,6 +161,10 @@
       "PackagePath": "staticwebassets\\img\\toddynho.jpg"
     },
     {
+      "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\img\\usuario.png",
+      "PackagePath": "staticwebassets\\img\\usuario.png"
+    },
+    {
       "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
@@ -199,6 +207,10 @@
     {
       "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\perfil.html",
       "PackagePath": "staticwebassets\\perfil.html"
+    },
+    {
+      "Id": "C:\\Users\\Alunos\\OneDrive\\Documents\\Sara\\Aroma-e-Sabor\\Aroma-e-Sabor\\wwwroot\\usuario.png",
+      "PackagePath": "staticwebassets\\usuario.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Aroma-e-Sabor.Microsoft.AspNetCore.StaticWebAssets.props",

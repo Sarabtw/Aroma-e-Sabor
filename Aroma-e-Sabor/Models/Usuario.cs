@@ -13,5 +13,9 @@ namespace Aroma_e_Sabor.Models
         [Required]
         public string? Senha { get; set; }
         public string? FotoPerfil { get; set; }
+
+        // Para recuperação de senha
+        public string? TokenRedefinicao { get; set; }
+        public DateTime? TokenRedefinicaoValidade { get; set; }
     }
 }
